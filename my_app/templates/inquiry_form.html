@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Inquiry Form</title>
+    <script>
+        // Function to display alert if a success message exists
+        function showAlert() {
+            const successMessage = "{{ messages|default:'' }}";
+            if (successMessage.includes("Wait for approval from admin.")) {
+                alert("Wait for approval from admin.");
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = showAlert;
+    </script>
+</head>
+<body>
+    <h2>Business Inquiry Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display Django messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: {% if message.tags == 'success' %}green{% else %}red{% endif %};">
+                {{ message }}
+            </p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

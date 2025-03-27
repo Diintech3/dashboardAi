@@ -1,0 +1,84 @@
+{% comment %} <h2>Admin Dashboard</h2>
+
+<!-- Plus Icon to Create New User -->
+<a href="{% url 'create_user' %}" style="font-size: 24px; text-decoration: none;">➕ Add User</a>
+
+{% if messages %}
+    {% for message in messages %}
+        <p style="color: green;">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>Business Info</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for inquiry in inquiries %}
+    <tr>
+        <td>{{ inquiry.name }}</td>
+        <td>{{ inquiry.mobile }}</td>
+        <td>{{ inquiry.address }}</td>
+        <td>{{ inquiry.business_info }}</td>
+        <td>{{ inquiry.status }}</td>
+        <td>
+            {% if inquiry.status == 'pending' %}
+                <a href="{% url 'approve_inquiry' inquiry.id %}">Approve</a> | 
+                <a href="{% url 'decline_inquiry' inquiry.id %}">Decline</a>
+            {% else %}
+                {{ inquiry.status|title }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'admin_logout' %}">Logout</a> {% endcomment %}
+
+
+<h2>Admin Dashboard</h2>
+
+<!-- Plus Icon to Create New User -->
+<a href="{% url 'create_user' %}" style="font-size: 24px; text-decoration: none;">➕ Add User</a>
+
+{% if messages %}
+    {% for message in messages %}
+        <p style="color: green;">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>Business Info</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for inquiry in inquiries %}
+    <tr>
+        <td>{{ inquiry.name }}</td>
+        <td>{{ inquiry.mobile }}</td>
+        <td>{{ inquiry.address }}</td>
+        <td>{{ inquiry.business_name }}</td>
+        <td>{{ inquiry.status }}</td>
+        <td>
+            {% if inquiry.status == 'pending' %}
+                <a href="{% url 'approve_inquiry' inquiry.id %}">Approve</a> | 
+                <a href="{% url 'decline_inquiry' inquiry.id %}">Decline</a>
+            {% else %}
+                {{ inquiry.status|title }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'admin_logout' %}">Logout</a>
