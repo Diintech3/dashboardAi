@@ -58,6 +58,13 @@
         <th>Mobile</th>
         <th>Address</th>
         <th>Business Info</th>
+        <th>Buisness No.</th>
+        <th>Email</th>
+        <th>GST No.</th>
+        <th>PAN NO.</th>
+        <th>Catagory</th>
+        <th>City</th>
+        <th>PIN</th>
         <th>Status</th>
         <th>Actions</th>
     </tr>
@@ -69,6 +76,13 @@
         <td>{{ inquiry.address }}</td>
         <td>{{ inquiry.business_name }}</td>
         <td>{{ inquiry.status }}</td>
+        <td>{{ inquiry.email }}</td>
+        <td>{{ inquiry.gstnumber }}</td>
+        <td>{{ inquiry.pannumber }}</td>
+        <td>{{ inquiry.category }}</td>
+        <td>{{ inquiry.city }}</td>
+        <td>{{ inquiry.pin }}</td>
+        <td>{{ inquiry.business_number }}</td>
         <td>
             {% if inquiry.status == 'pending' %}
                 <a href="{% url 'approve_inquiry' inquiry.id %}">Approve</a> | 

@@ -110,6 +110,13 @@ def admin_dashboard(request):
         'name': inquiry.name,
         'mobile': inquiry.mobile,
         'business_name': inquiry.business_name,
+        'email': inquiry.email,
+        'gstnumber': inquiry.gstnumber,
+        'pannumber': inquiry.pannumber,
+        'category': inquiry.category,
+        'city': inquiry.city,
+        'pin': inquiry.pin,
+        'business_number': inquiry.business_number,
         'status': inquiry.status,
         'created_at': inquiry.created_at.strftime("%Y-%m-%d %H:%M:%S")
     } for inquiry in inquiries]
@@ -183,8 +190,14 @@ def create_user(request):
         mobile = request.POST.get('mobile')
         address = request.POST.get('address')
         business_name = request.POST.get('business_name')
-
-        if not all([username, password, name, mobile, address, business_name]):
+        email = request.POST.get('email')
+        gstnumber = request.POST.get('gstnumber')
+        pannumber = request.POST.get('pannumber')
+        category = request.POST.get('category')
+        city = request.POST.get('city')
+        pin = request.POST.get('pin')
+        business_number = request.POST.get('business_number')
+        if not all([username, password, name, mobile, address, business_name, email, gstnumber, pannumber, category, city, pin, business_number]):
             return JsonResponse({
                 "success": False,
                 "error": "All fields are required"
@@ -204,6 +217,13 @@ def create_user(request):
                 mobile=mobile,
                 address=address,
                 business_name=business_name,
+                email=email,
+                gstnumber=gstnumber,
+                pannumber=pannumber,
+                category=category,
+                city=city,
+                pin=pin,
+                business_number=business_number,
                 status='approved',
                 is_admin_created=True
             )
