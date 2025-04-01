@@ -27,7 +27,12 @@ DEBUG = True
 
 import os
 # ALLOWED_HOSTS = ["*", os.getenv("RENDER_EXTERNAL_HOSTNAME", "")]
-ALLOWED_HOSTS = ['https://dashboardai.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    'dashboardai.onrender.com',
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com'  # This covers all subdomains of onrender.com
+]
 
 # Application definition
 
