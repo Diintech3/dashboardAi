@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-!jm0sfr^3lwgq6ws^rdct41u60i3!@s2nofpy8e%jvuz!ehf+_
 DEBUG = True
 
 import os
-ALLOWED_HOSTS = ["*", os.getenv("RENDER_EXTERNAL_HOSTNAME", "")]
-
+# ALLOWED_HOSTS = ["*", os.getenv("RENDER_EXTERNAL_HOSTNAME", "")]
+ALLOWED_HOSTS = ['https://dashboardai.onrender.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
