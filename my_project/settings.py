@@ -8,6 +8,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-!jm0sfr^3lwgq6ws^rdct41u60
 
 DEBUG = True
 
+ALLOWED_HOSTS = ["dashboardai.onrender.com"]
+
 # CORS Settings
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React frontend on port 3000
