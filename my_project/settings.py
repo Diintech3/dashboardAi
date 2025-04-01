@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-!jm0sfr^3lwgq6ws^rdct41u60
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["dashboardai.onrender.com"]
+ALLOWED_HOSTS = ["*","dashboardai.onrender.com", "localhost", "127.0.0.1"]
 
 # CORS Settings
 CORS_ALLOWED_ORIGINS = [
