@@ -26,13 +26,13 @@ SECRET_KEY = 'django-insecure-!jm0sfr^3lwgq6ws^rdct41u60i3!@s2nofpy8e%jvuz!ehf+_
 DEBUG = True
 
 import os
-# ALLOWED_HOSTS = ["*", os.getenv("RENDER_EXTERNAL_HOSTNAME", "")]
-ALLOWED_HOSTS = [
-    'dashboardai.onrender.com',
-    'localhost',
-    '127.0.0.1',
-    '.onrender.com'  # This covers all subdomains of onrender.com
-]
+ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = [
+#     'dashboardai.onrender.com',
+#     'localhost',
+#     '127.0.0.1',
+#     '.onrender.com'  # This covers all subdomains of onrender.com
+# ]
 
 # Application definition
 
