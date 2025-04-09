@@ -96,7 +96,7 @@ def business_inquiry(request):
 
 
 @csrf_exempt
-# @login_required
+@login_required
 def admin_dashboard(request):
     if not request.user.is_superuser:
         return JsonResponse({
@@ -127,7 +127,7 @@ def admin_dashboard(request):
     })
 
 @csrf_exempt
-# @login_required
+@login_required
 def approve_inquiry(request, inquiry_id):
     if not request.user.is_superuser:
         return JsonResponse({
@@ -151,7 +151,7 @@ def approve_inquiry(request, inquiry_id):
         }, status=200)
 
 @csrf_exempt
-# @login_required
+@login_required
 def decline_inquiry(request, inquiry_id):
     if not request.user.is_superuser:
         return JsonResponse({
@@ -175,7 +175,7 @@ def decline_inquiry(request, inquiry_id):
         }, status=200)
 
 @csrf_exempt
-# @login_required
+@login_required
 def create_user(request):
     if not request.user.is_superuser:
         return JsonResponse({
